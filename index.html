@@ -34,14 +34,14 @@
     .container {
       max-width: 960px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 0 20px;
     }
 
     header {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px 0 10px 0; /* reduced bottom padding */
+      padding-top: 20px;
     }
 
     header img {
@@ -54,19 +54,19 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 20px; /* reduced gap */
-      padding: 40px 20px 30px;
+      gap: 15px;
+      padding: 20px 0 30px;
     }
 
     .hero-text h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin: 0;
     }
 
     .hero-text p {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
+      font-size: 1rem;
+      margin: 0;
     }
 
     .hero-image img {
@@ -76,7 +76,7 @@
       border-radius: 20px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
       display: block;
-      margin: 0 auto;
+      margin: 20px auto 0;
     }
 
     .download-btn {
@@ -104,7 +104,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      padding: 40px 20px;
+      padding: 40px 0;
     }
 
     .feature-card {
@@ -126,7 +126,6 @@
 
     @media (min-width: 768px) {
       .hero {
-        flex-direction: column;
         max-width: 600px;
         margin: 0 auto;
       }
