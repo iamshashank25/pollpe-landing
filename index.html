@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Earn Paytm and UPI cash by sharing your opinion on PollPe surveys. Get ₹100 instantly and withdraw directly to Paytm or UPI.">
-  <title>PollPe - Earn Paytm & UPI Cash</title>
+  <meta name="description" content="Earn giftcards and UPI cash on PollPe by sharing your opinions through quick surveys and tasks.">
+  <title>PollPe - Earn Giftcards & UPI Cash</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,13 +17,14 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
-      color: #1a1a1a;
+      background: #5A31D6;
+      color: #ffffff;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 20px;
     }
@@ -59,32 +60,20 @@
       margin-bottom: 25px;
     }
 
-    .cta-btn {
-      background: #13c2ff;
-      color: #fff;
-      padding: 12px 30px;
-      border-radius: 8px;
+    .download-btn {
+      display: none;
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      background: #FFD400;
+      color: #000;
+      padding: 14px 40px;
+      border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
-      box-shadow: 0 4px 15px rgba(19, 194, 255, 0.3);
-      transition: background 0.2s;
-    }
-
-    .cta-btn:hover {
-      background: #0ea7e3;
-    }
-
-    .qr-box {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .qr-box img {
-      height: 180px;
-      display: block;
-      margin: 0 auto 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      z-index: 1000;
     }
 
     .features {
@@ -100,26 +89,29 @@
       width: 280px;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       text-align: center;
+      color: #1a1a1a;
     }
 
     footer {
       text-align: center;
       padding: 30px;
       font-size: 0.9rem;
-      background: #f0f2f5;
+      background: rgba(255, 255, 255, 0.1);
     }
 
     @media (min-width: 768px) {
       .hero {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
       }
+    }
 
-      .hero-text {
-        max-width: 50%;
+    @media (max-width: 767px) {
+      .download-btn {
+        display: block;
       }
     }
   </style>
@@ -131,33 +123,29 @@
 
   <section class="container hero">
     <div class="hero-text">
-      <h1>Earn Paytm & UPI Cash with Your Opinion</h1>
-      <p>Get ₹100 instantly. Share feedback. Earn real money through surveys.</p>
-      <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.ai.pollpe" target="_blank" rel="noopener">Install Now</a>
-    </div>
-    <div class="qr-box">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://play.google.com/store/apps/details?id=com.ai.pollpe" alt="Scan to Install">
-      <p>Scan to install the app</p>
+      <h1>Earn Giftcards &amp; UPI Cash with Your Opinion and simple tasks</h1>
+      <p>Get ₹100 Instantly. Share feedback. Earn real money through surveys.</p>
     </div>
   </section>
 
   <section class="features container">
     <div class="feature-card">
-      <h3>₹100 Signup Bonus</h3>
-      <p>Instant reward for new users.</p>
+      <h3>200 coins Signup Bonus</h3>
+      <p>Join PollPe and earn instantly</p>
     </div>
     <div class="feature-card">
       <h3>UPI/Paytm Withdrawals</h3>
-      <p>Transfer earnings directly to your account.</p>
+      <p>Get paid to wallet or bank</p>
     </div>
     <div class="feature-card">
-      <h3>Refer & Earn ₹100 per friend</h3>
-      <p>Invite friends and earn more together.</p>
+      <h3>Refer &amp; Earn 200 coins</h3>
+      <p>Invite friends and earn rewards</p>
     </div>
   </section>
 
   <footer>
     &copy; 2025 PollPe | All rights reserved
   </footer>
+  <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.ai.pollpe" target="_blank" rel="noopener">Download Now</a>
 </body>
 </html>
