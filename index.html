@@ -27,6 +27,26 @@
       100% { background-position: 0% 50%; }
     }
 
+    .download-btn {
+      display: none;
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      transform: translateX(-50%);
+      background: #FFD400;
+      color: #000;
+      padding: 14px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      white-space: nowrap;
+      max-width: 90%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      z-index: 1000;
+    }
+
     .download-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
@@ -124,6 +144,18 @@
     .carousel-dot.active {
       background: #FFD400;
     }
+
+    @media (max-width: 767px) {
+      .download-btn {
+        display: block;
+      }
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+      .hero-text p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -140,10 +172,6 @@
         <p class="text-lg md:text-xl mb-6">
           Get ₹100 Instantly! Share feedback, complete fun tasks, and earn real money through surveys.
         </p>
-        <a href="https://taskpe.o18.link/c?o=21474774&m=10307&a=353175" target="_blank" rel="noopener"
-          class="inline-block bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-full text-lg hover:bg-yellow-300 transition duration-300 shadow-lg mb-6">
-          Download Now
-        </a>
       </div>
       <div class="carousel mt-8" data-aos="zoom-in">
         <div class="carousel-inner">
@@ -202,6 +230,10 @@
   <footer class="text-center py-8 bg-opacity-10 bg-white">
     <p class="text-sm">© 2025 PollPe | All rights reserved</p>
   </footer>
+
+  <a class="download-btn" href="https://taskpe.o18.link/c?o=21474774&m=10307&a=353175" target="_blank" rel="noopener">
+    Download Now
+  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
