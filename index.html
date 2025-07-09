@@ -41,6 +41,89 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      text-align: center;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      border-radius: 0 0 1rem 1rem;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .carousel-controls button {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      margin: 0 10px;
+    }
+
+    .carousel-controls button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: #FFD400;
+    }
   </style>
 </head>
 <body>
@@ -58,12 +141,43 @@
           Get ₹100 Instantly! Share feedback, complete fun tasks, and earn real money through surveys.
         </p>
         <a href="https://taskpe.o18.link/c?o=21474774&m=10307&a=353175" target="_blank" rel="noopener"
-          class="inline-block bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-full text-lg hover:bg-yellow-300 transition duration-300 shadow-lg">
+          class="inline-block bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-full text-lg hover:bg-yellow-300 transition duration-300 shadow-lg mb-6">
           Download Now
         </a>
       </div>
-      <div class="hero-image mt-8">
-        <img src="./pollpe-hero.png" alt="PollPe App Screenshot" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl" data-aos="zoom-in" />
+      <div class="carousel mt-8" data-aos="zoom-in">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img src="giftcard-image.jpg" alt="Earn Giftcards" />
+            <div class="carousel-caption">
+              <h3 class="text-lg font-semibold">Earn Exciting Giftcards</h3>
+              <p>Redeem your points for popular giftcards instantly!</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="survey-image.jpg" alt="Complete Surveys" />
+            <div class="carousel-caption">
+              <h3 class="text-lg font-semibold">Fun & Quick Surveys</h3>
+              <p>Share your opinions and earn rewards in minutes.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="refer-image.jpg" alt="Refer Friends" />
+            <div class="carousel-caption">
+              <h3 class="text-lg font-semibold">Refer & Earn</h3>
+              <p>Invite friends and get 200 coins per referral!</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button onclick="prevSlide()">❮</button>
+          <button onclick="nextSlide()">❯</button>
+        </div>
+        <div class="carousel-dots">
+          <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+          <span class="carousel-dot" onclick="goToSlide(1)"></span>
+          <span class="carousel-dot" onclick="goToSlide(2)"></span>
+        </div>
       </div>
     </div>
   </section>
@@ -86,13 +200,8 @@
   </section>
 
   <footer class="text-center py-8 bg-opacity-10 bg-white">
-    <p class="text-sm">&copy; 2025 PollPe | All rights reserved</p>
+    <p class="text-sm">© 2025 PollPe | All rights reserved</p>
   </footer>
-
-  <a class="download-btn fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-full text-base md:hidden shadow-lg"
-     href="https://taskpe.o18.link/c?o=21474774&m=10307&a=353175" target="_blank" rel="noopener">
-    Download Now
-  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
@@ -100,6 +209,36 @@
       duration: 800,
       once: true,
     });
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const totalSlides = slides.length;
+
+    function updateCarousel() {
+      document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
   </script>
 </body>
 </html>
