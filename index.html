@@ -7,14 +7,10 @@
   <title>PollPe - Earn Giftcards & UPI Cash</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #7F00FF, #E100FF, #00C9FF);
@@ -31,147 +27,79 @@
       100% { background-position: 0% 50%; }
     }
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 20px;
-    }
-
-    header img {
-      height: 50px;
-      margin-bottom: 10px;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 15px;
-      padding: 20px 0 30px;
-    }
-
-    .hero-text h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    .hero-text p {
-      font-size: 1rem;
-      margin: 0;
-    }
-
-    .hero-image img {
-      width: 100%;
-      max-width: 420px;
-      height: auto;
-      border-radius: 20px;
+    .download-btn:hover {
+      transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-      display: block;
-      margin: 20px auto 0;
-    }
-
-    .download-btn {
-      display: none;
-      position: fixed;
-      left: 50%;
-      bottom: 20px;
-      transform: translateX(-50%);
-      background: #FFD400;
-      color: #000;
-      padding: 14px 24px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      white-space: nowrap;
-      max-width: 90%;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-      text-align: center;
-      z-index: 1000;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px 0;
+      transition: all 0.3s ease;
     }
 
     .feature-card {
-      background: #fff;
-      width: 280px;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      color: #1a1a1a;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9rem;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    @media (min-width: 768px) {
-      .hero {
-        max-width: 600px;
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .download-btn {
-        display: block;
-      }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
 <body>
-  <header class="container">
-    <img src="pollpe-logo.png" alt="PollPe logo" />
+  <header class="container mx-auto px-4 py-6 flex justify-center items-center" data-aos="fade-down">
+    <img src="pollpe-logo.png" alt="PollPe logo" class="h-12 md:h-16" />
   </header>
 
-  <section class="container hero">
-    <div class="hero-text">
-      <h1>Earn Giftcards &amp; UPI Cash with Your Opinion and Simple Tasks</h1>
-      <p>Earn ₹100 Instantly. Share feedback. Earn real money through surveys.</p>
-    </div>
-    <div class="hero-image">
-      <img src="./pollpe-hero.png" alt="PollPe App Screenshot" />
-    </div>
-  </section>
-
-  <section class="features container">
-    <div class="feature-card">
-      <h3>200 coins Signup Bonus</h3>
-      <p>Join PollPe and earn instantly</p>
-    </div>
-    <div class="feature-card">
-      <h3>UPI/Paytm Withdrawals</h3>
-      <p>Get paid to wallet or bank</p>
-    </div>
-    <div class="feature-card">
-      <h3>Refer &amp; Earn 200 coins</h3>
-      <p>Invite friends and earn rewards</p>
+  <section class="container mx-auto px-4 py-8 md:py-12 text-center" data-aos="fade-up">
+    <div class="hero max-w-3xl mx-auto">
+      <div class="hero-text">
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
+          Earn <span class="text-yellow-400">Giftcards</span> & <span class="text-yellow-400">UPI Cash</span> with Your Opinions
+        </h1>
+        <p class="text-lg md:text-xl mb-6">
+          Get ₹100 Instantly! Share feedback, complete fun tasks, and earn real money through surveys.
+        </p>
+        <a href="https://taskpe.o18.link/c?o=21474774&m=10307&a=353175" target="_blank" rel="noopener"
+          class="inline-block bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-full text-lg hover:bg-yellow-300 transition duration-300 shadow-lg">
+          Download Now
+        </a>
+      </div>
+      <div class="hero-image mt-8">
+        <img src="./pollpe-hero.png" alt="PollPe App Screenshot" class="w-full max-w-md mx-auto rounded-2xl shadow-2xl" data-aos="zoom-in" />
+      </div>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 PollPe | All rights reserved
+  <section class="features container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="feature-card bg-white text-gray-900 p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-bold mb-2">200 Coins Signup Bonus</h3>
+        <p>Join PollPe and start earning instantly with a welcome bonus!</p>
+      </div>
+      <div class="feature-card bg-white text-gray-900 p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-bold mb-2">UPI/Paytm Withdrawals</h3>
+        <p>Cash out your earnings directly to your wallet or bank account.</p>
+      </div>
+      <div class="feature-card bg-white text-gray-900 p-6 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-bold mb-2">Refer & Earn 200 Coins</h3>
+        <p>Invite friends to PollPe and earn rewards for each referral.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-8 bg-opacity-10 bg-white">
+    <p class="text-sm">&copy; 2025 PollPe | All rights reserved</p>
   </footer>
 
-  <a class="download-btn" href="https://taskpe.o18.link/c?o=21474774&m=10307&a=353175" target="_blank" rel="noopener">Download Now</a>
+  <a class="download-btn fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded-full text-base md:hidden shadow-lg"
+     href="https://taskpe.o18.link/c?o=21474774&m=10307&a=353175" target="_blank" rel="noopener">
+    Download Now
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
 </body>
 </html>
